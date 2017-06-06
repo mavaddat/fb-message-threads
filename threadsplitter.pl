@@ -1,15 +1,18 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use JSON;
 use v5.10;
+
+#Usage syntax: perl .\threadsplitter.pl 'C:\...\messages.htm' 'C:\...\outputdir'
 
 use File::Slurp;
 use Mojo::DOM;
 
-use constant MY_NAME => "Aaron van Geffen";
+use constant MY_NAME => "Mavaddat Javid";
 
-my ($filename) = shift;
-my ($export_dir) = shift;
+my ($filename) = shift; #First parameter
+my ($export_dir) = shift; #Second parameter
 if (!$filename or !(-f $filename) or !$export_dir) {
 	warn "Usage: $0 <path to messages.htm> <directory to export to> \n";
 	exit 1;
